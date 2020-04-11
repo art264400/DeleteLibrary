@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace DeleteLibrary.Models
 {
     public class TakenBook
@@ -7,7 +9,7 @@ namespace DeleteLibrary.Models
         public DateTime? DateTake { get; set; }
         public DateTime? DateReturn { get; set; }
         public bool IsDeleted { get; set; }
-        public bool IsReserved { get; set; }
+        public bool? IsReserved { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
         public int BookId { get; set; }
@@ -15,8 +17,11 @@ namespace DeleteLibrary.Models
         public TakenBook()
         {
             IsDeleted = false;
-            IsReserved = false;
-            UserId = 1;
+            Book=new Book();
+            User=new User();
         }
+
+           
+        
     }
 }
