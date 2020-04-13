@@ -15,7 +15,7 @@
     </div>
     <div>
         @Html.LabelFor(m => m.Discription)
-        @Html.EditorFor(m => m.Discription)
+        @Html.TextAreaFor(m => m.Discription)
         @Html.ValidationMessageFor(m => m.Discription)
     </div>
     <div>
@@ -24,7 +24,7 @@
         @Html.ValidationMessageFor(m => m.Cover)
     </div>
     <div>
-        <input type="submit" value="Сохранить"/>
+        <input class="btn btn-block btn-success" type="submit" value="Сохранить"/>
     </div>
 </div>
 }

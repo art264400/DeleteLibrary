@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
+<H2>@Html.ActionLink("Добавить новую книгу","CreateBook")</H2>
 <table class="table table-bordered table-hover table-striped table-condensed">
     <tr>
         <th>Название</th>
@@ -19,8 +19,8 @@
             <td> <img style="max-height: 200px" src="@book.Cover"> </td>
             <td>@book.Author</td>
             <td>@book.Discription</td>
-            <td>@Html.ActionLink("Edit","EditBook","Admin",new {Id=book.Id}, new { @class = "btn btn-block" })</td>
-            <td>@Html.ActionLink("Remove","RemoveBook","Admin",new {Id=book.Id}, new { @class = "btn btn-block" })</td>
+            <td>@Html.ActionLink("Edit","EditBook","Admin",new {Id=book.Id}, new { @class = "btn btn-block btn-success" })</td>
+            <td>@Html.ActionLink("Remove","RemoveBook","Admin",new {Id=book.Id}, new { @class = "btn btn-block btn-danger" })</td>
         </tr>
     }
 </table>

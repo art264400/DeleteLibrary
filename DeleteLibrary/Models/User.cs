@@ -12,6 +12,7 @@
         public User()
         {
             IsDeleted = false;
+            RoleId = 2;
         }
     }
 }

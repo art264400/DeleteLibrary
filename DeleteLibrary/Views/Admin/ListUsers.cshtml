@@ -1,0 +1,24 @@
+﻿@model DeleteLibrary.Models.User[]
+<H2>@Html.ActionLink("Добавить нового пользователя", "CreateUser")</H2>
+<table class="table table-bordered table-hover table-striped table-condensed">
+    <tr>
+        <th>Читатель</th>
+        <th>Логин</th>
+        <th>Пароль</th>
+        <th>Роль в системе</th>
+        <th>Изменение</th>
+        <th>Удаление</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+    <tr>
+        <td>@user.Name</td>
+        <td>@user.Login</td>
+        <td>@user.Password</td>
+        <td>@user.Role.Name</td>
+        <td>@Html.ActionLink("Edit","EditUser","Admin",new {Id= user.Id}, new { @class = "btn btn-block btn-success" })</td>
+        <td>@Html.ActionLink("Remove","RemoveUser","Admin",new {Id= user.Id}, new { @class = "btn btn-block btn-danger" })</td>
+    </tr>
+    }
+</table>
+

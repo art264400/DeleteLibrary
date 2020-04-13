@@ -9,7 +9,7 @@ namespace DeleteLibrary.Models
         public DateTime? DateTake { get; set; }
         public DateTime? DateReturn { get; set; }
         public bool IsDeleted { get; set; }
-        public bool? IsReserved { get; set; }
+        public bool IsReserved { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
         public int BookId { get; set; }
@@ -17,11 +17,7 @@ namespace DeleteLibrary.Models
         public TakenBook()
         {
             IsDeleted = false;
-            Book=new Book();
-            User=new User();
+            IsReserved = false;
         }
-
-           
-        
     }
 }

@@ -1,0 +1,26 @@
+﻿@model DeleteLibrary.Models.User
+<H2>@Html.ActionLink("Добавить нового пользователя", "CreateUser")</H2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+    <div>
+        <div>
+            @Html.LabelFor(m => m.Login)
+            @Html.EditorFor(m => m.Login)
+            @Html.ValidationMessageFor(m => m.Login)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Name)
+            @Html.EditorFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Password)
+            @Html.TextAreaFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div>
+            <input class="btn btn-block btn-success" type="submit" value="Сохранить"/>
+        </div>
+    </div>
+}

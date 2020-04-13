@@ -1,0 +1,34 @@
+﻿@model DeleteLibrary.Models.TakenBook[]
+<table class="table table-bordered table-hover table-striped table-condensed">
+    <tr>
+        <th>Название книги</th>
+        <th>Текущий владелец</th>
+        <th>Дата получения</th>
+        <th>Забронировано</th>
+        <th>Действие</th>
+    </tr>
+    @foreach (var takenBook in Model)
+    {
+        <tr>
+            <td>@takenBook.Book.Name</td>
+            <td> @takenBook.User.Name</td>
+            <td>@takenBook.DateTake</td>
+            <td>
+                @if (takenBook.IsReserved)
+                {
+
+                    <span>Книга забронирована:</span>
+                    @Html.ActionLink("Снять бронь, отдать книгу читателю", "RemoveReservedAtTakenBook", "Admin", new { Id = takenBook.Id }, new { @class = "btn btn-block btn-primary" })
+                    @Html.ActionLink("Отменить бронирование", "ReturnBook", "Admin", new { Id = takenBook.Id }, new { @class = "btn btn-block btn-primary" })
+                }
+                else
+                {
+                    <span>Книга у читателя</span>
+
+                }
+            <td>@Html.ActionLink("Пользователь вернул книгу", "ReturnBook", "Admin", new { Id = takenBook.Id }, new { @class = "btn btn-block btn-primary" })</td>
+
+            </td>
+        </tr>
+    }
+</table>

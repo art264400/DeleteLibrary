@@ -1,0 +1,21 @@
+﻿@model DeleteLibrary.Models.Book[]
+<table class="table table-bordered table-hover table-striped table-condensed">
+    <tr>
+        <th>Название</th>
+        <th>Постер</th>
+        <th>Автор</th>
+        <th>Описание</th>
+        <th>Действие</th>
+
+    </tr>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.Name</td>
+            <td> <img style="max-height: 200px" src="@book.Cover"> </td>
+            <td>@book.Author</td>
+            <td>@book.Discription</td>
+            <td>@Html.ActionLink("Забронировать книгу","ReservedBook","Library",new {Id=book.Id}, new { @class = "btn btn-block btn-success" })</td>
+        </tr>
+    }
+</table>

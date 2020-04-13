@@ -1,0 +1,19 @@
+﻿@model DeleteLibrary.Models.User
+
+@using (Html.BeginForm())
+{
+    <div>
+        <div>
+            @Html.LabelFor(m=>m.Login)
+            @Html.EditorFor(m=>m.Login)
+            @Html.ValidationMessageFor(m=>m.Login)
+        </div>
+        <div>
+            @Html.LabelFor(m=>m.Password)
+            @Html.PasswordFor(m=>m.Password)
+            @Html.ValidationMessageFor(m=>m.Password)
+        </div>
+        <input type="submit" value="Вход"/>
+    </div>
+}
+
