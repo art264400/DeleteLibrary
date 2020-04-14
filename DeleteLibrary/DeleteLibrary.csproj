@@ -231,6 +231,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ExtensionsForHelpers\AdminHelper.cs" />
     <Compile Include="Interfaces\IlibraryService.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\ReducedModels\LoginModel.cs" />
@@ -246,6 +247,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\util.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -386,6 +389,12 @@
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\Admin\CreateUser.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Library\ListMyBooks.cshtml" />
+    <Content Include="Views\Library\ListReservedMyBooks.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Account\login2.cshtml" />
+    <Content Include="Views\Shared\SabNavigation.cshtml" />
+    <Content Include="Views\Library\ListAllBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

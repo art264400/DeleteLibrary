@@ -2,28 +2,28 @@
 @using (Html.BeginForm())
 {
     <div>
-        <div>
+        <div class="form-group">
             @Html.LabelFor(m => m.Author)
-            @Html.EditorFor(m => m.Author)
+            @Html.EditorFor(m => m.Author, new { HtmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(m => m.Author)
         </div>
-        <div>
+        <div class="form-group">
             @Html.LabelFor(m => m.Name)
-            @Html.EditorFor(m => m.Name)
+            @Html.EditorFor(m => m.Name, new { HtmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(m => m.Name)
         </div>
-        <div>
+        <div class="form-group">
             @Html.LabelFor(m => m.Discription)
-            @Html.EditorFor(m => m.Discription)
+            @Html.TextAreaFor(m => m.Discription, new { @class = "editor-book form-control", @rows = "15" })
             @Html.ValidationMessageFor(m => m.Discription)
         </div>
-        <div>
+        <div class="form-group">
             @Html.LabelFor(m => m.Cover)
-            @Html.EditorFor(m => m.Cover)
+            @Html.EditorFor(m => m.Cover, new { HtmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(m => m.Cover)
         </div>
         <div>
-            <input class="btn btn-block btn-success" type="submit" value="Добавить книгу"/>
+            <input class="btn btn-block btn-success" type="submit" value="Добавить книгу" />
         </div>
     </div>
 }

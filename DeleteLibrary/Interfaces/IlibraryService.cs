@@ -14,6 +14,7 @@ namespace DeleteLibrary.Interfaces
 
         User[] GetAllUsers();
         User GetUserById(int id);
+        User GetUserByLogin(string login);
         bool CreateUser(User newUser);
         bool RemoveUserById(int id);
         bool UpdateUser(User updateUser);
@@ -21,6 +22,8 @@ namespace DeleteLibrary.Interfaces
 
         bool CreateTakenBook(TakenBook newTakenBook);
         TakenBook[] GetAllTakenBooks();
+        TakenBook[] GetTakenBooksByUserId(int id);
+        TakenBook[] GetReservedTakenBooksByUserId(int id);
         TakenBook GetTakenBookById(int id);
         TakenBook GetTakenBookByBookId(int bookId);
         bool RemoveTakenBookByBookId(int bookId);

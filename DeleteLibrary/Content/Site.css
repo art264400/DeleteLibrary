@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 20px;
 }
 
@@ -21,4 +21,124 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #ffd541;
+}
+
+    .form h1 {
+        margin: 30px 100px;
+        padding: 0;
+        text-align: center;
+        color: black;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+.input-form {
+    margin: 15px 40px;
+    text-align: center;
+}
+
+    .input-form input {
+        padding: 10px;
+        width: 100%;
+        color: #fff;
+        font-size: 20px;
+        background: none;
+        outline: none;
+        border: 1px solid;
+        box-sizing: border-box;
+    }
+
+        .input-form input[type="text"]:focus, .input-form input[type="password"]:focus {
+            border: 1px solid #0fc3f5;
+        }
+
+        .input-form input[type="submit"] {
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: #0fc3f5;
+            border: none;
+            border-radius: 5px;
+        }
+
+.dws-menu * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.dws-menu ul, .dws-menu ul {
+    list-style: none;
+}
+
+.dws-menu > ul {
+    display: flex;
+    justify-content: center;
+}
+
+    .dws-menu > ul li a {
+        display: block;
+        background: #ececed;
+        padding: 15px 30px 15px 40px;
+        font-size: 14px;
+        color: $454547;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    .dws-menu > ul li {
+        position: relative;
+        border-right: 1px solid #b2b3b5;
+    }
+
+        .dws-menu > ul li > a i.fa {
+            position: absolute;
+            top: 15px;
+            left: 12px;
+            font-size: 18px;
+        }
+
+        .dws-menu > ul li:first-child {
+            border-left: 1px solid #b2b3b5;
+        }
+
+        .dws-menu > ul li:last-child {
+            border-right: 1px solid #b2b3b5;
+        }
+
+.dws-menu li a:hover {
+    background: #454547;
+    color: #fff;
+    box-shadow: 1px 5px 10px -5px black;
+    transition: all 0.3s ease;
+}
+
+.list-book {
+    padding: 15px;
+    border-bottom: 1px solid #ffd541;
+}
+.img-books-list {
+    width: 205px;
+    height: 284px;
+    border: 2px solid #ffd541;
+}
+.name-books-list {
+    padding-left: 2px;
+    padding-bottom: 2px;
+}
+.author-books-list {
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+.editor-book {
+    display: block;
 }

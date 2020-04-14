@@ -30,13 +30,30 @@ namespace DeleteLibrary.Controllers
             var takenBook = new TakenBook
             {
                 BookId = Id,
-                UserId = 3, //Здесь нужно поставить пользователя, который авторезирован
+                UserId = _libraryService.GetUserByLogin(User.Identity.Name).Id, //Здесь нужно поставить пользователя, который авторезирован
                 IsReserved = true
             };
             _libraryService.RemoveTakenBookByBookId(Id);
            _libraryService.CreateTakenBook(takenBook);
            
             return RedirectToAction("ListFreeBooks");
+        }
+
+        public ActionResult ListMyBooks()
+        {
+            var TakenBooks = _libraryService.GetTakenBooksByUserId(_libraryService.GetUserByLogin(User.Identity.Name).Id);
+            return View(TakenBooks);
+        }
+        public ActionResult ListReservedMyBooks()
+        {
+            var reservedTakenBooks = _libraryService.GetReservedTakenBooksByUserId(_libraryService.GetUserByLogin(User.Identity.Name).Id);
+            return View(reservedTakenBooks);
+        }
+
+        public ActionResult ListAllBooks()
+        {
+            var takenBooks = _libraryService.GetAllTakenBooks();
+            return View(takenBooks);
         }
 
     }

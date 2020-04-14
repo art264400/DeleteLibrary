@@ -47,5 +47,8 @@ namespace DeleteLibrary.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
+
+      
     }
 }
+

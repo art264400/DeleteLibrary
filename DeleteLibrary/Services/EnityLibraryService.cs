@@ -86,6 +86,13 @@ namespace DeleteLibrary.Services
                 return db.Users.Include(m=>m.Role).FirstOrDefault(m => m.Id == id);
             }
         }
+        public User GetUserByLogin(string login)
+        {
+            using (LibraryContext db = new LibraryContext())
+            {
+                return db.Users.Include(m => m.Role).FirstOrDefault(m => m.Login == login);
+            }
+        }
 
         public bool CreateUser(User newUser)
         {
@@ -135,6 +142,20 @@ namespace DeleteLibrary.Services
             using (LibraryContext db = new LibraryContext())
             {
                 return db.TakenBooks.Where(m => m.IsDeleted == false).Include(m=>m.Book).Include(m=>m.User).ToArray();
+            }
+        }
+        public TakenBook[] GetTakenBooksByUserId(int id)
+        {
+            using (LibraryContext db = new LibraryContext())
+            {
+                return GetAllTakenBooks().Where(m => m.IsReserved == false && m.User.Id == id).ToArray();
+            }
+        }
+        public TakenBook[] GetReservedTakenBooksByUserId(int id)
+        {
+            using (LibraryContext db = new LibraryContext())
+            {
+                return GetAllTakenBooks().Where(m => m.IsReserved == true && m.User.Id == id).ToArray();
             }
         }
 
@@ -216,5 +237,7 @@ namespace DeleteLibrary.Services
                     .FirstOrDefault(m => m.Login == loginModel.Login && m.Password == loginModel.Password);
             }
         }
+
+       
     }
 }
