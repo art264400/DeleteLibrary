@@ -56,5 +56,16 @@ namespace DeleteLibrary.Controllers
             return View(takenBooks);
         }
 
+        public ActionResult HistoryMyAllTakenBooks()
+        {
+            var allTakenBook = _libraryService.GetAllOnDeletedTakenBooks().Where(m=>m.User.Login==User.Identity.Name).ToArray();
+            return View(allTakenBook);
+        }
+        //public ActionResult SearchBook(string searchString)
+        //{
+        //    var takenBooks = _libraryService.GetAllTakenBooks();
+        //    takenBooks.Select(m => m.Book.Name.Contains(searchString)); 
+        //    return View("~/Views/Library/ListAllBooks.cshtml",takenBooks);
+        //}
     }
 }

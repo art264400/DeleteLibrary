@@ -144,6 +144,13 @@ namespace DeleteLibrary.Services
                 return db.TakenBooks.Where(m => m.IsDeleted == false).Include(m=>m.Book).Include(m=>m.User).ToArray();
             }
         }
+        public TakenBook[] GetAllOnDeletedTakenBooks()
+        {
+            using (LibraryContext db = new LibraryContext())
+            {
+                return db.TakenBooks.Include(m => m.Book).Include(m => m.User).ToArray();
+            }
+        }
         public TakenBook[] GetTakenBooksByUserId(int id)
         {
             using (LibraryContext db = new LibraryContext())

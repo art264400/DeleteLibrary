@@ -24,6 +24,7 @@ namespace DeleteLibrary.Interfaces
         TakenBook[] GetAllTakenBooks();
         TakenBook[] GetTakenBooksByUserId(int id);
         TakenBook[] GetReservedTakenBooksByUserId(int id);
+        TakenBook[] GetAllOnDeletedTakenBooks();
         TakenBook GetTakenBookById(int id);
         TakenBook GetTakenBookByBookId(int bookId);
         bool RemoveTakenBookByBookId(int bookId);

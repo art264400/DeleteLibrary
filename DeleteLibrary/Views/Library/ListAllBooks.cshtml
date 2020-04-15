@@ -1,5 +1,10 @@
 ﻿@model DeleteLibrary.Models.TakenBook[]
-
+@*@using (Html.BeginForm("SearchBook", "Library", FormMethod.Get, new { @class = "form-control" })) { 
+<p>
+    <input type="text" name="searchString" placeholder="поиск по названию" />
+    <input type="submit" value="поиск" />
+</p>
+}*@
 @foreach (var takenBook in Model)
 {
     <div class="list-book">

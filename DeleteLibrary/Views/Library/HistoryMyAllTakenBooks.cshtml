@@ -1,0 +1,21 @@
+﻿@model DeleteLibrary.Models.TakenBook[]
+<table class="table table-bordered table-hover table-striped table-condensed">
+    <tr>
+        <th>Название книги</th>
+        <th>Обложка</th>
+        <th>Дата получения</th>
+        <th>Дата возврата</th>
+    </tr>
+    @foreach (var takenBook in Model)
+    {
+        <tr>
+            <td>@takenBook.Book.Name</td>
+            <td><img class="img-size" src="@takenBook.Book.Cover" /></td>
+            <td>@takenBook.DateTake</td>
+            <td>@takenBook.DateReturn</td>
+        </tr>
+    }
+</table>
+
+
+

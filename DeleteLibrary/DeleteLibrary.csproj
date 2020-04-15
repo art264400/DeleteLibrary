@@ -395,6 +395,8 @@
     <Content Include="Views\Account\login2.cshtml" />
     <Content Include="Views\Shared\SabNavigation.cshtml" />
     <Content Include="Views\Library\ListAllBooks.cshtml" />
+    <Content Include="Views\Admin\ListAllOnDeletedTakenBooks.cshtml" />
+    <Content Include="Views\Library\HistoryMyAllTakenBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

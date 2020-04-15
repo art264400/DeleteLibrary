@@ -22,6 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+.img-size {
+    width: 143px;
+    height: 206px;
+}
 
 .form {
     position: absolute;
@@ -68,58 +72,6 @@ textarea {
             border: none;
             border-radius: 5px;
         }
-
-.dws-menu * {
-    margin: 0px;
-    padding: 0px;
-}
-
-.dws-menu ul, .dws-menu ul {
-    list-style: none;
-}
-
-.dws-menu > ul {
-    display: flex;
-    justify-content: center;
-}
-
-    .dws-menu > ul li a {
-        display: block;
-        background: #ececed;
-        padding: 15px 30px 15px 40px;
-        font-size: 14px;
-        color: $454547;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: all 0.3s ease;
-    }
-
-    .dws-menu > ul li {
-        position: relative;
-        border-right: 1px solid #b2b3b5;
-    }
-
-        .dws-menu > ul li > a i.fa {
-            position: absolute;
-            top: 15px;
-            left: 12px;
-            font-size: 18px;
-        }
-
-        .dws-menu > ul li:first-child {
-            border-left: 1px solid #b2b3b5;
-        }
-
-        .dws-menu > ul li:last-child {
-            border-right: 1px solid #b2b3b5;
-        }
-
-.dws-menu li a:hover {
-    background: #454547;
-    color: #fff;
-    box-shadow: 1px 5px 10px -5px black;
-    transition: all 0.3s ease;
-}
 
 .list-book {
     padding: 15px;

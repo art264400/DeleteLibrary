@@ -111,5 +111,11 @@ namespace DeleteLibrary.Controllers
             _libraryService.CreateUser(user);
             return RedirectToAction("ListUsers");
         }
+
+        public ActionResult ListAllOnDeletedTakenBooks()
+        {
+            var allOnDeletedTakenBooks=_libraryService.GetAllOnDeletedTakenBooks().Where(m=>m.UserId!=1).ToArray();
+            return View(allOnDeletedTakenBooks);
+        }
     }
 }

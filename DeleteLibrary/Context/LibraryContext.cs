@@ -1,9 +1,10 @@
-﻿using DeleteLibrary.Models;
+﻿using System;
+using DeleteLibrary.Models;
 using System.Data.Entity;
 
 namespace DeleteLibrary.Context
 {
-    public class LibraryContext:DbContext
+    public class LibraryContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
@@ -15,17 +16,29 @@ namespace DeleteLibrary.Context
     //{
     //    protected override void Seed(LibraryContext db)
     //    {
+    //        db.Roles.Add(new Role
+    //        {
+    //            Id = 1,
+    //            Name = "Admin",
+    //        });
+    //        db.Roles.Add(new Role
+    //        {
+    //            Id=2,
+    //            Name = "User",
+    //        });
     //        db.Users.Add(new User
     //        {
     //            Login = "mino",
     //            Name = "Артур Губайдуллин",
-    //            Password = "123"
+    //            Password = "123",
+    //            RoleId = 1
     //        });
     //        db.Users.Add(new User
     //        {
     //            Login = "mino2",
     //            Name = "Иван",
-    //            Password = "123"
+    //            Password = "123",
+    //            RoleId=2
     //        });
     //        db.Books.Add(new Book
     //        {
