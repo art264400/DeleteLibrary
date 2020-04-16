@@ -14,9 +14,9 @@ namespace DeleteLibrary.Controllers
     {
         public IlibraryService _libraryService;
 
-        public AdminController()
+        public AdminController(IlibraryService libraryService)
         {
-            _libraryService=new EnityLibraryService();
+            _libraryService = libraryService;
         }
 
         public ActionResult Index()
@@ -43,7 +43,7 @@ namespace DeleteLibrary.Controllers
         public ActionResult EditBook(Book book)
         {
 
-            _libraryService.UpdateBook(book);
+            if (ModelState.IsValid) _libraryService.UpdateBook(book);
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -55,7 +55,7 @@ namespace DeleteLibrary.Controllers
         [HttpPost]
         public ActionResult CreateBook(Book book)
         {
-            _libraryService.CreateBook(book);
+            if (ModelState.IsValid) _libraryService.CreateBook(book);
             return RedirectToAction("Index");
         }
 
@@ -82,6 +82,10 @@ namespace DeleteLibrary.Controllers
         }
         public ActionResult RemoveUser(int Id)
         {
+            if (Id == 1)
+            {
+                return RedirectToAction("ListUsers");
+            }
             _libraryService.RemoveUserById(Id);
             return RedirectToAction("ListUsers");
         }
@@ -94,8 +98,7 @@ namespace DeleteLibrary.Controllers
         [HttpPost]
         public ActionResult EditUser(User user)
         {
-
-            _libraryService.UpdateUser(user);
+            if (ModelState.IsValid) _libraryService.UpdateUser(user);
             return RedirectToAction("ListUsers");
         }
 
@@ -108,7 +111,7 @@ namespace DeleteLibrary.Controllers
         [HttpPost]
         public ActionResult CreateUser(User user)
         {
-            _libraryService.CreateUser(user);
+            if (ModelState.IsValid) _libraryService.CreateUser(user);
             return RedirectToAction("ListUsers");
         }
 

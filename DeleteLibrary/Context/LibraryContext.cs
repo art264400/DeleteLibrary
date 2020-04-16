@@ -1,6 +1,7 @@
 ﻿using System;
 using DeleteLibrary.Models;
 using System.Data.Entity;
+using DeleteLibrary.Models.Visitors;
 
 namespace DeleteLibrary.Context
 {
@@ -10,7 +11,9 @@ namespace DeleteLibrary.Context
         public DbSet<Book> Books { get; set; }
         public DbSet<TakenBook> TakenBooks { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Visitor> Visitors { get; set; }
     }
+
 
     //public class LibraryDbInit : DropCreateDatabaseAlways<LibraryContext>
     //{

@@ -14,9 +14,9 @@ namespace DeleteLibrary.Controllers
     {
         public IlibraryService _libraryService;
 
-        public LibraryController()
+        public LibraryController(IlibraryService libraryService)
         {
-            _libraryService = new EnityLibraryService();
+            _libraryService = libraryService;
         }
         // GET: Library
         public ActionResult ListFreeBooks()

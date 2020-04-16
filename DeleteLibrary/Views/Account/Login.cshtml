@@ -20,12 +20,14 @@
                         </span>
                         <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
                             @Html.EditorFor(m => m.Login, new { htmlAttributes = new { @class = "input100", placeholder = "Логин" } })
+                            @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
                             <span class="focus-input100"></span>
                         </div>
 
 
                         <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
                             @Html.PasswordFor(m => m.Password, new { @class = "input100", placeholder = "Пароль" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             <span class="focus-input100"></span>
                         </div>
 

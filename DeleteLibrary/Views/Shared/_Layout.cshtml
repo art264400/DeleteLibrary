@@ -26,6 +26,7 @@
                 <li>@Html.ActionLink("Список всех книг", "ListAllBooks", "Library")</li>
                 <li>@Html.ActionLink("Моя история", "HistoryMyAllTakenBooks", "Library")</li>
                 <li>@Html.ActionLink("Выйти", "Logout", "Account")</li>
+                <li><div class="User-name">Привет, @User.Identity.Name </div></li>
             </ul>
         </div>
         @Html.Partial("~/Views/Shared/SabNavigation.cshtml").If(User.IsInRole("Admin"))

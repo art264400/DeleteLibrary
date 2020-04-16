@@ -26,6 +26,11 @@ textarea {
     width: 143px;
     height: 206px;
 }
+.User-name {
+    color: white;
+    padding-top: 15px;
+    padding-left: 20px;
+}
 
 .form {
     position: absolute;
